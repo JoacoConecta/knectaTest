@@ -1,0 +1,62 @@
+:root {
+  --color-bg:        #f9f7f5;   /* fondo cálido, casi blanco */
+  --color-surface:   #ffffff;
+  --color-text:      #1e1e1e;
+  --color-muted:     #6d6d6d;
+  --color-border:    #e1ddd8;
+
+  --color-dark:#000000;
+  
+  --brand-primary:   #009ee3;   /* Mercado Pago */
+  --brand-primary-600:#007bb8;
+  --brand-primary-700:#006a9e;
+
+  --brand-wa:        #67c94d;
+  --brand-wa-600:    #64c34a;
+  
+  --promo-50:        #1a1a1a;   /* rojo suave */
+  --promo-50-dark:   #000000;
+  --promo-25:        #646464;
+  --promo-25-dark:   #000000;
+
+/* tipografía */
+  --font-sans: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+
+  /* layout */
+  --container: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* sombras */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+  --shadow-md: 0 5px 20px rgba(0,0,0,0.2);
+
+  /* tiempos */
+  --ease: cubic-bezier(.2,.7,.3,1);
+  --t-100: .15s;
+  --t-200: .3s;
+
+  /* header */
+  --header-h: 10.5vh;
+
+  /* z-index */
+  --z-header: 1000;
+  --z-overlay: 1500;
+  --z-modal: 1600;
+
+  /* breakpoints */
+  --bp-md: 768px;
+
+  /* velocidades cinta */
+  --cinta-speed: 12s; /* 12s = movimiento lento; pon 20s para muy lento */
+  --cinta-distance: 200%; /* cuánto recorre el fondo */
+
+
+}

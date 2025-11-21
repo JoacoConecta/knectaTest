@@ -1,0 +1,73 @@
+/* ========================================== 🧱 BASE ========================================== */
+main.page{padding-top:6rem;width:100%;margin:0 auto;}
+
+/* ========================================== ⚙️ ORDENADOR (filtros) ========================================== */
+.ordenador{width:92%;margin:0 auto 2rem auto;display:flex;justify-content:flex-end;align-items:center;font-size:12px;letter-spacing:0.05em;color:var(--color-muted);text-transform:uppercase;}
+#orden-precio,#filtro-talle-select{border:none;background:transparent;font:inherit;color:var(--color-dark);padding:4px 20px 4px 4px;cursor:pointer;border-bottom:1px solid transparent;appearance:none;background-image:url("data:image/svg+xml,%3Csvg fill='%23666' height='10' viewBox='0 0 24 24' width='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center;background-size:10px;transition:border-color 0.2s ease;}
+#orden-precio:hover,#filtro-talle-select:hover{border-bottom:1px solid var(--color-border);}
+
+/* ========================================== 🧩 GRILLA DE PRODUCTOS — pegada, sin gaps ========================================== */
+.carrusel{display:grid;grid-template-columns:repeat(auto-fill,minmax(22%,1fr));width:100%;justify-content:center;align-items:start;margin:0 auto;padding:0;gap:0;}
+.contenedor_producto{text-align:left;cursor:pointer;border:none;padding:0;margin:0;}
+
+/* ========================================== 🖼️ IMAGEN PRINCIPAL ========================================== */
+.contenedor_producto_foto{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;}
+.contenedor_producto_foto img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:opacity 0.5s ease;}
+.hovered{position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease;}
+.contenedor_producto_foto:hover .hovered{opacity:1;}
+
+/* ========================================== 💬 DESCRIPCIÓN BAJO IMAGEN ========================================== */
+.descrippcion_producto{padding-top:0.8rem;line-height:1.3;margin-bottom:3rem;}
+.nombre_producto{font-size:13px;font-weight:400;color:var(--color-dark);letter-spacing:0.02em;text-transform:none;margin:0 0 0.1rem 0;}
+.precio_producto{font-size:12px;font-weight:400;color:var(--color-muted);margin:0;}
+.precio_transferencia,.descrippcion_producto h3{display:none;}
+.precio_original{display:none;}
+
+/* ========================================== 🏷️ PROMO TAG — estilo sutil ========================================== */
+.etiqueta_promo{position:absolute;top:0.8rem;left:0.8rem;background:var(--color-dark);color:#fff;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;padding:2px 5px;}
+
+/* ========================================== 📱 RESPONSIVE ========================================== */
+@media (max-width:1024px){.carrusel{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}}
+@media (max-width:768px){main.page{padding-top:5rem;}.carrusel{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}.nombre_producto{font-size:12px;}.precio_producto{font-size:11px;}.precio_original{display:block;margin-bottom:0.2rem;}}
+/* --------------------------- 🔥 Efecto de subrayado negro --------------------------- */
+.contenedor_producto_foto::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background-color:var(--color-dark);transform:scaleX(0);transform-origin:right;transition:transform 0.4s ease;}
+.contenedor_producto_foto:hover::after{transform:scaleX(1);transform-origin:left;}
+/* ============================================================ 💸 PRECIOS INLINE — sin modificar HTML ============================================================ */
+.descrippcion_producto{padding-top:1.2rem;padding-inline:1.2rem;line-height:1.4;margin-bottom:3rem;}
+.nombre_producto{font-size:15px;font-weight:500;letter-spacing:0.01em;margin:0 0 0.6rem 0;color:var(--color-dark);transition:color 0.3s ease;}
+.precio_original,.precio_producto{display:inline-block;vertical-align:baseline;margin:0;}
+.precio_original{font-size:13px;color:var(--color-muted);text-decoration:line-through;opacity:0.6;margin-right:0.4rem;}
+.precio_producto{font-size:15px;font-weight:600;color:var(--color-dark);letter-spacing:0.01em;}
+.descrippcion_producto:hover .nombre_producto,.descrippcion_producto:hover .precio_producto{transform:translateY(-1px);transition:transform 0.3s ease;}
+@media (max-width:768px){.precio_original,.precio_producto{display:block;margin:0;}.precio_original{margin-bottom:0.2rem;}}
+.precio_original{color:rgba(0,0,0,0.4);font-weight:400;}
+.carrusel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
+  justify-content: start;
+}
+.carrusel:has(.contenedor_producto:only-child) {justify-content: start;max-width: 22%;margin-inline: 4%;}
+@media (max-width:768px){
+  main.page{padding-top:5rem;}
+  .carrusel{
+    grid-template-columns:repeat(2, 1fr); /* 👈 fuerza dos productos por fila */
+  }
+  .nombre_producto{font-size:12px;}
+  .precio_producto{font-size:11px;}
+  .precio_original{display:block;margin-bottom:0.2rem;}
+}
+/* ============================================================
+   📱 FILTROS — versión más sutil y minimal en móviles
+   ============================================================ */
+@media (max-width: 768px) {
+  .ordenador {
+    width: 94%;
+    margin-bottom: 1.2rem;
+    justify-content: space-between;
+    font-size: 11px;
+    opacity: 0.8;
+  }
+
+  #orden-precio,
+  #filtro-talle-select {padding: 2px 12px 2px 2px;font-size: 11px;color: var(--color-muted);border-bottom: 1px solid rgba(0, 0, 0, 0.05);background-size: 8px;}
+  #orden-precio:hover,#filtro-talle-select:hover {border-bottom-color: rgba(0, 0, 0, 0.1);}.ordenador label {font-weight: 400;color: var(--color-muted);margin-right: 4px;}}

@@ -1,0 +1,25 @@
+#cambiador_display {
+  display:flex; align-items:end; justify-content:end; background: rgb(248,248,248);
+}
+.selector-columnas {
+  display:flex; justify-content:center; align-items:center; gap:1vw; margin-right:3vw; flex-wrap:wrap;scale: 0.7;  filter: invert(1);
+  mix-blend-mode: difference;
+}
+.opcion { font-size:1.2rem; color:#000; padding:.4rem .8rem; cursor:pointer; }
+
+.loader {
+  position: fixed; inset: 0; background:#ffffffee; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; z-index: 9999; transition: opacity var(--t-200) var(--ease);
+}
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.spinner {
+  width: 60px; height: 60px; border: 6px solid #ccc; border-top-color: #222; border-radius: 50%;
+  animation: girar 1s linear infinite; margin-bottom: 15px;
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+.loader-text { font-size: 1.2rem; color:#333; animation: fade 1s ease-in-out infinite alternate; }
+@keyframes fade { from { opacity:.6 } to { opacity:1 } }
+#loader ~ #whatsapp { display: none; }

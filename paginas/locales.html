@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tienda</title>
+<link rel="stylesheet" href="/styles/core/knecta.css">
+    <!-- tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="/styles/components/locales.css">
+</head>
+
+<body>
+    <div id="splash-screen" class="splash-loader">
+        <img src="/imagenes/knecta.png" alt="Cargando..." class="splash-logo" />
+
+        <div class="spinner"></div>
+    </div>
+    <div id="header-mount"></div>
+
+    <main id="main_tiendas">
+        <section id="info_tiendas">
+            <div class="encabezado-tiendas">
+                <h1>Nuestras Tiendas</h1>
+                <p>Encuentra tu local más cercano. Haz clic en una tienda para verla en el mapa.</p>
+            </div>
+            <div class="contenedor-tarjetas">
+                <div class="tarjeta-tienda active" data-lat="-38.0055" data-lng="-57.5426">
+                    <div class="icono-tienda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="detalles-tienda">
+                        <h2>Mar del Plata Centro</h2>
+                        <p class="direccion">Av. Colón 1234, B7600 Mar del Plata</p>
+                        <p class="horario">Lunes a Sábados: 10:00 - 20:00 hs</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-tienda" data-lat="-34.6037" data-lng="-58.3816">
+                    <div class="icono-tienda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="detalles-tienda">
+                        <h2>Buenos Aires - Palermo</h2>
+                        <p class="direccion">Jorge Luis Borges 1234, C1425 CABA</p>
+                        <p class="horario">Lunes a Sábados: 11:00 - 21:00 hs</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="mapa_tiendas">
+            <iframe id="google-maps-iframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201207.691722881!2d-57.71261358359376!3d-38.01322079999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d94d19d34209%3A0xdd96708040015e8d!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1695975315900!5m2!1ses-419!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </main>
+
+
+    <div id="footer-mount"></div>
+
+    <!-- terceros -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <!-- tu mini-framework -->
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/components/mapa.js"></script>
+    <script type="module" src="/js/components/carrito.js" defer></script>
+    <script type="module" src="/js/components/formulario.js" defer></script>
+    <script src="/js/utils/mandarwppcarrito.js" defer></script>
+    <script src="/js/utils/wpp.js"></script>
+</body>
+
+</html>

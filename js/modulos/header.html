@@ -1,0 +1,299 @@
+<header class="header-total">
+  <div id="contenedor-header-general">
+    <div id="sexos">
+      <div id="hombres"><a href="/paginas/tienda.html?sexo=hombre"style="text-decoration: none;">HOMBRES</a></div></a>
+      <div id="mujeres"><a href="/paginas/tienda.html?sexo=mujer"style="text-decoration: none;">MUJERES</a></div>
+    </div>
+   <a href="/index.html"><div id="logo"><img src="/imagenes/logo.png" alt="logo"></div></a>
+    <div id="carrito"><img id="carrito-selector" src="/imagenes/carrito.png" alt="">
+      <span class="carrito-contador" id="carrito-contador" aria-live="polite">0</span>
+
+      <!-- Modal carrito -->
+      <div id="modal-carrito" class="modal-carrito-oculto" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="carrito-titulo">
+        <div class="modal-carrito-overlay" id="modal-carrito-overlay" tabindex="-1"></div>
+        <div class="modal-carrito-contenido">
+          <div class="modal-carrito-header">
+            <h2 id="carrito-titulo">Tu Carrito de Compras</h2>
+            <button id="cerrar-carrito-btn" class="cerrar-btn" aria-label="Cerrar carrito">&times;</button>
+          </div>
+
+          <div id="carrito-items-container"></div>
+          <p id="carrito-vacio-msg" style="display:none; text-align:center; padding:20px;">Tu carrito está vacío.</p>
+
+          <div class="modal-carrito-footer">
+            <div class="carrito-total">
+              <strong>Total:</strong>
+              <span id="carrito-total-precio">$0.00</span>
+            </div>
+
+            <div class="carrito-acciones">
+              <button id="vaciar-carrito-btn" class="btn-accion btn-vaciar">Vaciar Carrito</button>
+
+              <button id="finalizar-compra-btn" class="mp-button">
+                <img src="/imagenes/mp.png" alt="" class="mp-logo" />
+                Pagar con Mercado Pago
+              </button>
+            </div>
+
+            <div id="boton_MP_container">
+              <button id="mandar_wpp" class="wa-button">
+                <img src="/imagenes/wpp.png" alt="" class="wa-logo" />
+                Terminar compra en WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal-->
+      <div class="desplegable mujeres">
+        <div class="cerrar-desplegable" aria-label="Cerrar menú">&times;</div>
+        <div class="contenedor-general-desplegable">
+          <ul class="categorias-general">
+            <ul class="selector-categoria"><span>SUPERIOR</span>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=campera">CAMPERAS</a></li>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=remera">REMERAS</a></li>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=camisa">CAMISA</a></li>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=hoodie">HOODIES</a></li>
+            </ul>
+            <ul class="selector-categoria"><span>INFERIOR</span>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=zapato">ZAPATOS</a></li>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=pantalon">PANTALONES</a></li>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=bermuda">BERMUDAS</a></li>
+            </ul>
+            <ul class="selector-categoria"> <span>ACCESORIOS</span>
+              <li><a href="/paginas/tienda.html?sexo=mujer&categoria=gorro">GORRO</a></li>
+            </ul>
+            <div><a role="menuitem" href="/paginas/liquidacion.html">LIQUIDACIÓN</a></div>
+          </ul>
+          <div class="imagen-desplegable"><img src="/imagenes/pm.avif" alt=""></div>
+        </div>
+      </div>
+
+
+
+
+      <div class="desplegable hombres">
+        <div class="cerrar-desplegable" aria-label="Cerrar menú">&times;</div>
+        <div class="contenedor-general-desplegable">
+          <ul class="categorias-general">
+            <ul class="selector-categoria"><span>SUPERIOR</span>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=campera">CAMPERAS</a></li>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=remera">REMERAS</a></li>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=camisa">CAMISA</a></li>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=hoodie">HOODIES</a></li>
+            </ul>
+            <ul class="selector-categoria"><span>INFERIOR</span>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=zapato">ZAPATOS</a></li>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=pantalon">PANTALONES</a></li>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=bermuda">BERMUDAS</a></li>
+            </ul>
+            <ul class="selector-categoria"> <span>ACCESORIOS</span>
+              <li><a href="/paginas/tienda.html?sexo=hombre&categoria=gorro">GORRO</a></li>
+            </ul>
+            <div><a role="menuitem" href="/paginas/liquidacion.html">LIQUIDACIÓN</a></div>
+          </ul>
+          <div class="imagen-desplegable"><img src="/imagenes/ph.avif" alt=""></div>
+        </div>
+      </div>
+
+
+
+      <!--menu desplegable movil-->
+      <nav id="barra_menu" aria-label="Menú principal">
+        <div id="mobile-menu-header">
+          <img src="/imagenes/logo.png" alt="Logo de la tienda" />
+          <button id="exit-menu" aria-label="Cerrar menú"><span>&times;</span></button>
+        </div>
+
+        <ul id="contenedor_menu_interno" role="menubar">
+          <li class="nav-item" role="none"><a role="menuitem" href="/paginas/especial.html">NUEVO DROP</a></li>
+
+          <li class="nav-item dropdown" role="none">
+            <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">TIENDA</a>
+            <div class="dropdown-menu" id="sub_menu_tienda" role="group" aria-label="Submenú Tienda">
+              <div id="sub_menu_columnas">
+                <ul>
+                  <li><a href="/paginas/tienda.html?sexo=hombre"><b>HOMBRES</b></a></li>
+                  <li><a href="/paginas/tienda.html?sexo=hombre&categoria=campera">CAMPERAS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=hombre&categoria=remera">REMERAS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=hombre&categoria=pantalon">BAGGYS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=hombre&categoria=hoodie">HOODIES</a></li>
+                </ul>
+                <ul>
+                  <li><a href="/paginas/tienda.html?sexo=mujer"><b>MUJERES</b></a></li>
+                  <li><a href="/paginas/tienda.html?sexo=mujer&categoria=zapato">ZAPATOS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=mujer&categoria=campera">CAMPERAS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=mujer&categoria=remera">REMERAS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=mujer&categoria=pantalon">BAGGYS</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=mujer&categoria=hoodie">HOODIES</a></li>
+                  <li><a href="/paginas/tienda.html?sexo=mujer&categoria=accesorio">ACCESORIOS</a></li>
+                </ul>
+                <ul>
+                  <li><a href="/paginas/tienda.html?categoria=remera"><b>CATEGORÍAS</b></a></li>
+                  <li><a href="/paginas/tienda.html?categoria=remera">REMERAS</a></li>
+                  <li><a href="/paginas/tienda.html?categoria=pantalon">BAGGYS</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="none"><a role="menuitem" href="/paginas/liquidacion.html">LIQUIDACIÓN</a>
+          </li>
+          <li class="nav-item" role="none"><a role="menuitem" href="/paginas/locales.html ">LOCALES</a></li>
+        </ul>
+      </nav>
+      <div id="burguer" aria-label="Abrir menú"><button class="header-icon burguer" id="mobile-menu-trigger"
+          aria-label="Abrir menú"><svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <title>Menú</title>
+            <rect x="4" y="7" width="16" height="1.6" fill="currentColor" />
+            <rect x="4" y="15" width="16" height="1.6" fill="currentColor" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </div>
+  <div id="display-switcher" class="display-switcher">
+    <div class="selector-columnas" role="group" aria-label="Cambiar columnas">
+      <span>VER:</span>
+      <a href="#" data-cols="3" class="opcion">x3</a>
+      <a href="#" data-cols="4" class="opcion is-active">x4</a>
+      <a href="#" data-cols="6" class="opcion" id="not-cell">x6</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  //cambia el slickeado del selector de columnas
+  document.querySelectorAll('.display-switcher .opcion').forEach(b => {
+    b.addEventListener('click', e => {
+      document.querySelectorAll('.display-switcher .opcion')
+        .forEach(x => x.classList.toggle('is-active', x === b));
+    });
+  });
+
+  (() => {
+    const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+    const mobileMenu = document.getElementById('barra_menu');
+    const exitMenuButton = document.getElementById('exit-menu');
+    let overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    // crea overlay si no existe (el de carrito no sirve para el menú)
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'overlay';
+      overlay.className = 'menu-overlay';
+      document.body.appendChild(overlay);
+    }
+
+    const openMenu = () => {
+      mobileMenu.classList.add('visible');
+      overlay.classList.add('visible');
+      body.classList.add('no-scroll');
+    };
+    const closeMenu = () => {
+      mobileMenu.classList.remove('visible');
+      overlay.classList.remove('visible');
+      body.classList.remove('no-scroll');
+    };
+
+    mobileMenuTrigger?.addEventListener('click', openMenu);
+    exitMenuButton?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
+
+    // Dropdown en móvil
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    if (dropdownToggle && dropdownMenu) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = dropdownMenu.classList.toggle('visible');
+        dropdownToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+          dropdownMenu.classList.remove('visible');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Bloquear drag (solo una vez)
+    if (!window.__dragBlockerInstalled) {
+      document.addEventListener('dragstart', e => e.preventDefault());
+      document.querySelectorAll('img, a').forEach(el => el.setAttribute('draggable', 'false'));
+      window.__dragBlockerInstalled = true;
+    }
+  })();
+
+  // Ajuste dinámico del alto del submenú (efecto acordeón fluido)
+  document.querySelectorAll('.dropdown-menu').forEach(menu => {
+    const fullHeight = menu.scrollHeight;
+    menu.dataset.height = fullHeight;
+  });
+
+
+  (() => {
+    const isDesktop = () => window.matchMedia('(min-width: 770px)').matches;
+
+    const triggerH = document.getElementById('hombres');
+    const triggerM = document.getElementById('mujeres');      // (para cuando agregues el panel de mujeres)
+    const panelH = document.querySelector('.hombres');
+    const panelM = document.querySelector('.mujeres');
+
+    let openPanel = null;
+
+    const open = (panel) => {
+      if (!panel) return;
+      closeAll();
+      panel.classList.add('activo');
+      openPanel = panel;
+      // accesibilidad opcional
+      triggerH?.setAttribute('aria-expanded', panel === panelH ? 'true' : 'false');
+      triggerM?.setAttribute('aria-expanded', 'false');
+    };
+
+    const closeAll = () => {
+      document.querySelectorAll('.desplegable.activo').forEach(p => p.classList.remove('activo'));
+      openPanel = null;
+      triggerH?.setAttribute('aria-expanded', 'false');
+      triggerM?.setAttribute('aria-expanded', 'false');
+    };
+
+    // --- Abrir HOMBRES con mouseenter (desktop
+    const activateH = (e) => { if (isDesktop()) open(panelH); };
+    triggerH?.addEventListener('mouseenter', activateH);
+
+
+    const activateM = (e) => { if (isDesktop()) open(panelM); };
+    triggerM?.addEventListener('mouseenter', () => { if (isDesktop()) open(panelM); });
+
+
+    // --- Click fuera para cerrar
+    document.addEventListener('click', (e) => {
+      if (!isDesktop()) return;
+      const clickedInsidePanel = openPanel && openPanel.contains(e.target);
+      const clickedTriggerH = triggerH && triggerH.contains(e.target);
+      const clickedTriggerM = triggerM && triggerM.contains(e.target);
+      if (!clickedInsidePanel && !clickedTriggerH && !clickedTriggerM) closeAll();
+    });
+
+    // --- Tecla ESC para cerrar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && openPanel) closeAll();
+    });
+
+    // --- Si cambia a móvil, cerramos
+    window.addEventListener('resize', () => { if (!isDesktop()) closeAll(); });
+    document.querySelectorAll('.cerrar-desplegable').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const panel = e.target.closest('.desplegable');
+        if (panel) panel.classList.remove('activo');
+      });
+    });
+
+
+  })();
+
+</script>

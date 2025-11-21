@@ -1,0 +1,23 @@
+.etiqueta-promo {
+  position:absolute; top: 2%; left: -8px; padding: 8px 15px;
+  color:#fff; font-weight:700; font-size: 1.7rem; text-transform: uppercase;
+  box-shadow: var(--shadow-sm); z-index: 2;
+}
+.etiqueta-promo::before {
+  content:''; position:absolute; top:100%; left:0;
+  border-right: 8px solid transparent; border-bottom: 8px solid transparent; z-index:-1;
+}
+.descuento-50 { background: var(--promo-50); }
+.descuento-50::before { border-right-color: var(--promo-50-dark); border-bottom-color: var(--promo-50-dark); }
+.descuento-25 { background: var(--promo-25); }
+.descuento-25::before { border-right-color: var(--promo-25-dark); border-bottom-color: var(--promo-25-dark); }
+.descuento-20 { background: var(--promo-20); }
+.descuento-20::before { border-right-color: var(--promo-20-dark); border-bottom-color: var(--promo-20-dark); }
+.descuento-10 { background: var(--promo-10); }
+.descuento-10::before { border-right-color: var(--promo-10-dark); border-bottom-color: var(--promo-10-dark); }
+
+.precio_original { text-decoration: line-through; color:#999; font-size: .9em; margin-right: 8px; }
+
+@media (max-width: 767px) {
+  .etiqueta-promo { top:2%; left:1%; padding: 1% 3%; font-size: .7rem; }
+}

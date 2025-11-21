@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+  <link rel="stylesheet" href="/styles/core/knecta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/core/index.css">
+</head>
+
+<body>
+  <div id="splash-screen" class="splash-loader">
+    <img src="/imagenes/knecta.png" alt="Cargando..." class="splash-logo" />
+
+    <div class="spinner"></div>
+  </div>
+  <div id="header-mount"></div>
+  <section class="banner-split">
+    <div class="panel left">
+      <img src="/imagenes/banMu.avif" alt="Mujer" />
+      <a href="/paginas/tienda.html?sexo=mujer"class="overlay-link">
+        <span class="text-anchor">MUJERES</span>
+      </a>
+    </div>
+
+    <div class="panel right">
+      <img src="./imagenes/banHom.avif" alt="Hombre" />
+      <a href="/paginas/tienda.html?sexo=hombre"class="overlay-link">
+        <span class="text-anchor">HOMBRES</span>
+      </a>
+    </div>
+  </section>
+
+  <div id="footer-mount"></div>
+
+  
+  <!-- terceros -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  
+  <script src="/js/utils/anularscroll.js"></script>
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/components/carrito.js" defer></script>
+  <script type="module" src="/js/components/formulario.js" defer></script>
+</body>
+
+</html>

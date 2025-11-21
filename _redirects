@@ -1,0 +1,4 @@
+# Sintaxis: /ruta-origen  /ruta-destino  codigo-status
+
+# La magia del proxy (el 200 es clave, significa "reescribir", no redirigir)
+/server/* https://k-nectafrstat.onrender.com/:splat  200

@@ -1,0 +1,176 @@
+/* ===========================================================
+   📦 FICHA DE PRODUCTO — versión limpia y optimizada
+   =========================================================== */
+
+/* ===========================================================
+   💸 BLOQUE DE PRECIOS + ETIQUETA DESCUENTO
+   =========================================================== */
+#distinto{
+  overflow: visible;
+}
+.descrippcion_producto{margin-bottom:0 !important;}
+#textos_superior .precio_transferencia{
+  display: flex;
+} 
+ul{
+    list-style: none;
+  }
+.precio-contenedor-moderno {
+  display:flex; align-items:baseline; flex-wrap:wrap; gap:.75rem;
+}
+
+.precio-original-tachado {
+  font-size:var(--fs-16); color:var(--color-muted);
+  text-decoration:line-through; font-weight:400;
+}
+
+.precio-promo-wrapper {
+  display:flex; align-items:center; gap:10px;
+}
+
+.precio-promo-wrapper h1 {
+  font-size:calc(var(--fs-20)*1.6); font-weight:700; color:var(--color-dark);
+}
+
+/* 🎯 Etiqueta junto al precio */
+.precio-promo-wrapper .etiqueta-descuento {
+  background:var(--promo-50); color:#fff; font-size:var(--fs-12); font-weight:600;
+  padding:3px 10px; border-radius:4px; letter-spacing:.05em; text-transform:uppercase;
+  animation:aparecer .5s ease-out forwards;
+}
+
+@keyframes aparecer {
+  from{opacity:0; transform:translateY(5px);}
+  to{opacity:1; transform:none;}
+}
+
+/* ===========================================================
+   🖼️ FOTO PRINCIPAL + ETIQUETA SOBRE IMAGEN
+   =========================================================== */
+.contenedor_producto_foto {
+  position:relative; border-radius:var(--radius-md);
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease);
+  will-change:transform; overflow:hidden;
+}
+
+.contenedor_producto_foto:hover {
+  transform:translateY(-3px) scale(1.03); box-shadow:var(--shadow-sm);
+}
+
+.placeholder_foto.principal img {
+  width:100%; height:100%; object-fit:cover; transition:filter .8s var(--ease);
+}
+
+.contenedor_producto_foto:hover img { filter:brightness(1.05); }
+
+/* 🔥 Etiqueta sobre la imagen */
+.contenedor_producto_foto .etiqueta-descuento {
+  position:absolute; top:12px; right:12px;
+  background:var(--promo-50); color:#fff; font-size:var(--fs-12); font-weight:600;
+  padding:4px 10px; border-radius:4px; letter-spacing:.05em; text-transform:uppercase;
+  opacity:0; transform:translateY(5px);
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+  animation:etiquetaImgIn .5s ease-out forwards;
+}
+
+@keyframes etiquetaImgIn {
+  from{opacity:0; transform:translateY(5px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===========================================================
+   📏 TALLES
+   =========================================================== */
+.talle {
+  border:1px solid var(--color-border);
+  background:var(--color-surface); transition:all var(--t-200) var(--ease);
+}
+.talle:hover { border-color:var(--color-text); }
+.talle.selected {
+  background:var(--color-dark); color:var(--color-surface);
+  border-color:var(--color-dark); transform:translateY(-2px);
+}
+
+/* ===========================================================
+   📜 DESCRIPCIÓN (acordeón)
+   =========================================================== */
+#descripcion {
+  --desc-dur:.45s; --desc-ease:cubic-bezier(.25,.8,.25,1);
+  border-top:1px solid var(--color-border);
+  border-bottom:1px solid var(--color-border);
+  padding:1.2rem 0; cursor:pointer;
+  transition:background .3s var(--ease);
+}
+#descripcion:hover { background:rgba(0,0,0,.02); }
+
+#descripcion_contenido {
+  max-height:0; opacity:0; overflow:hidden;
+  transition:max-height var(--desc-dur) var(--desc-ease),
+             opacity calc(var(--desc-dur)-.15s) ease-in,
+             margin-top calc(var(--desc-dur)-.05s) var(--desc-ease);
+}
+#descripcion.active #descripcion_contenido {
+  max-height:200px; opacity:1; margin-top:1rem;
+  animation:desc-reveal .28s ease-out both;
+}
+
+@keyframes desc-reveal {
+  from{opacity:0; transform:translateY(-4px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* sutil subrayado al abrir */
+#descripcion.active #descripcion_header h4::after {
+  content:""; display:block; height:1px; width:100%;
+  background:var(--color-border); margin-top:.4rem; opacity:.6;
+}
+
+/* ícono del acordeón */
+#descripcion .icono-descripcion { transition:transform .4s var(--desc-ease); }
+#descripcion.active .icono-descripcion { transform:rotate(45deg); }
+#descripcion.active .icono-descripcion svg {
+  animation:desc-nudge .28s var(--desc-ease) 1; transform-origin:50% 50%;
+}
+
+@keyframes desc-nudge {
+  from{transform:scale(.92);}
+  to{transform:scale(1);}
+}
+/*======================================*/
+/*           detalle de la transferencia*/
+#textos_superior .precio_transferencia {
+  background: #242424;
+  color: #f5f5f5;
+  font-size: 0.85rem;
+  padding: 0.4em 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  
+}
+/* ===========================================================
+   🛒 BOTÓN AGREGAR AL CARRITO
+   =========================================================== */
+#agregar-al-carrito-btn {
+  background:var(--color-dark); color:var(--color-surface);
+  font-weight:600; text-transform:uppercase; letter-spacing:.08em;
+  transition:background var(--t-200) var(--ease),
+             box-shadow var(--t-200) var(--ease);
+}
+#agregar-al-carrito-btn:hover {
+  background:var(--promo-50-dark);
+  box-shadow:0 4px 12px rgba(217,38,62,.25);
+}
+
+/* ===========================================================
+   ⚙️ GLOBAL UTILS
+   =========================================================== */
+main { margin-top:0 !important; }
+.mid_web { padding-top:0 !important; }
+
+/* ===========================================================
+   ♿ ACCESIBILIDAD — sin animaciones si reduce motion
+   =========================================================== */
+@media (prefers-reduced-motion:reduce) {
+  * { animation:none !important; transition:none !important; }
+}

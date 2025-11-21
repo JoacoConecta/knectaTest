@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Producto</title>
+    <link rel="stylesheet" href="/styles/core/knecta.css">
+    <!-- tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="/styles/components/recomendados.css">
+    <link rel="stylesheet" href="/styles/components/product.css">
+    <link rel="stylesheet" href="/styles/details/producto.css">
+
+</head>
+
+<body>
+    <div id="splash-screen" class="splash-loader">
+    <img src="/imagenes/knecta.png" alt="Cargando..." class="splash-logo" />
+    
+    <div class="spinner"></div> 
+  </div>
+    <div id="loader-mount"></div>
+    <div id="header-mount"></div>
+    <main class="page">
+
+        <section class="mid_web">
+            <div id="whatsapp"
+                style="position:fixed;bottom:2vh;right:1vw;width:55px;height:55px;transform:scale(.85);">
+                <img src="/imagenes/wpp.png" alt="WhatsApp" loading="lazy" />
+            </div>
+
+            <section id="main_producto">
+                <ul id="contenedor_producto_auxiliar">
+                    <li>
+                        <div class="placeholder_foto auxiliar"></div>
+                    </li>
+                    <li>
+                        <div class="placeholder_foto auxiliar"></div>
+                    </li>
+                    <li>
+                        <div class="placeholder_foto auxiliar"></div>
+                    </li>
+                </ul>
+                <div id="contenedor_producto_exclusivo">
+                    <div class="placeholder_foto principal">
+                    </div>
+                    <div id="textos_producto_principal">
+                        <div id="textos_superior">
+                            <div>
+                                <h1 class="titulo"></h1>
+                            </div>
+                            <div>
+                                <h1 class="precio"></h1>
+                                <h5></h5>
+                            </div>
+                            <div>
+                                <h2 class="precio_transferencia"></h2>
+                            </div>
+                        </div>
+                        <div id="comentario_editorial">
+                            <p class="product-quote">“Diseñado para desafiar el frío con estilo impecable.”</p>
+                        </div>
+
+                        <div id="talles">
+                            <div class="talles_titulo">
+                                <h3>talle</h3>
+                            </div>
+                            <ul id="cuarados_talles">
+                                <li class="talle">
+                                    <p>S</p>
+                                </li>
+                                <li class="talle">
+                                    <p>M</p>
+                                </li>
+                                <li class="talle">
+                                    <p>XL</p>
+                                </li>
+                            </ul>
+                            <div id="guia">
+                                <h4>guía de talles</h4>
+                            </div>
+                        </div>
+                        <div id="descripcion">
+                            <div id="descripcion_header">
+                                <h4>descripción</h4>
+                                <div class="icono-descripcion">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="descripcion_contenido">
+                                <p>Aquí va el texto detallado de tu producto. Puedes hablar sobre los materiales, el
+                                    proceso
+                                    de fabricación, la inspiración detrás del diseño o cualquier otra cosa que añada
+                                    valor.
+                                    ¡Cuanto más interesante, mejor!</p>
+                            </div>
+                        </div>
+                        <!-- 🔹 POLÍTICAS (cambios, envíos, devoluciones) -->
+                        <div id="politicas" class="accordion">
+                            <div id="politicas_header" class="accordion-header">
+                                <h4>políticas de cambio & envío</h4>
+                                <div class="icono-politicas">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="politicas_contenido" class="accordion-content">
+                                <p>
+                                    • Cambios dentro de los 15 días con ticket.<br>
+                                    • No realizamos reembolsos, solo cambios o crédito en tienda.<br>
+                                    • Envíos a todo el país mediante Correo Argentino o Moto (MDP).<br>
+                                    • El costo de envío se calcula al finalizar la compra.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="selector_cantidad">
+                            <div id="estructura_selector">
+                                <button id="menos">-</button>
+                                <div id="cantidad">0</div>
+                                <button id="mas">+</button>
+                            </div>
+                            <button id="agregar-al-carrito-btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="seccion-recomendados">
+                <h2 class="titulo-seccion">Recomendados para ti</h2>
+
+                <div class="carrusel_contenedor">
+                    <div class="slide" id="carrusel">
+                        <!-- JS inyecta aquí las cards mediante generarCarrusel() -->
+                    </div>
+                </div>
+            </section>
+            <div id="footer-mount"></div>
+
+            <!-- terceros -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+            <script type="module" src="/js/main.js" defer></script>
+            <script type="module" src="/js/pages/producto.js" defer></script>
+            <script src="/js/utils/activardescripcción.js"></script>
+            <script src="/js/utils/anularscroll.js"></script>
+            <script type="module" src="/js/components/carrito.js" defer></script>
+            <script src="/js/utils/mandarwppcarrito.js" defer></script>
+            <script type="module" src="/js/components/formulario.js" defer></script>
+            <script src="/js/utils/wpp.js"></script>
+
+</body>
+
+</html>

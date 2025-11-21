@@ -1,0 +1,145 @@
+/* ============================================================
+   🧾 FORMULARIO DE COMPRA — estilo editorial minimal
+   ============================================================ */
+
+/* Fondo superpuesto */
+#compra-modal.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* luz blanca translúcida */
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--t-200) var(--ease), visibility var(--t-200) var(--ease);
+  z-index: var(--z-modal);
+}
+
+#compra-modal.activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Contenedor */
+#compra-modal .modal-contenido {
+  background: #fff;
+  color: var(--color-dark);
+  width: 90%;
+  max-width: 420px;
+  padding: 3rem 2.5rem;
+  border-radius: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  transform: translateY(20px);
+  transition: transform var(--t-200) var(--ease), opacity var(--t-200) var(--ease);
+  opacity: 0;
+  font-family: "Helvetica Neue", Roboto, sans-serif;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+#compra-modal.activo .modal-contenido {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Cerrar (minimal) */
+#compra-modal .cerrar-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 1.6rem;
+  color: #999;
+  cursor: pointer;
+  transition: opacity var(--t-100) var(--ease);
+}
+#compra-modal .cerrar-modal:hover {
+  opacity: 0.4;
+}
+
+/* Tipografía */
+#compra-modal h2 {
+  margin: 0 0 0.25em 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+}
+#compra-modal p {
+  color: #888;
+  font-size: var(--fs-14);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Inputs */
+#compra-modal .input-grupo {
+  margin-bottom: 1.5rem;
+}
+#compra-modal .input-grupo label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: #555;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+#compra-modal .input-grupo input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: transparent;
+  transition: border-color var(--t-200) var(--ease);
+}
+#compra-modal .input-grupo input:focus {
+  outline: none;
+  border-bottom-color: var(--color-dark);
+}
+
+/* Nota de envío */
+#compra-modal .nota-envio {
+  font-size: 0.75rem;
+  color: #666;
+  border-top: 1px solid #eee;
+  padding-top: 1.2rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Botón de envío — sobrio, editorial */
+#compra-modal .boton-enviar {
+  width: 100%;
+  margin-top: 1.8rem;
+  padding: 1rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color var(--t-200) var(--ease), transform var(--t-100) var(--ease);
+}
+#compra-modal .boton-enviar:hover {
+  background: #222;
+  transform: translateY(-1px);
+}
+#compra-modal .boton-enviar:active {
+  background: #000;
+  transform: translateY(0);
+}
+
+/* Animación sutil de aparición */
+@keyframes modalFadeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

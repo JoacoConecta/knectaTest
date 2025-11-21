@@ -1,0 +1,56 @@
+.splash-loader {
+      /* 1. Apariencia: Fondo blanco para que el logo se fusione */
+      background-color: #ffffff; 
+
+      /* 2. Posición: Cubre toda la pantalla */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999; /* Por encima de todo */
+
+      /* 3. Contenido: Centra tu logo/spinner */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Espacio entre el logo y el spinner */
+
+      /* 4. Transición para ocultarlo suavemente */
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    }
+
+    .splash-loader.hidden {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .splash-logo {
+      width: 200px; /* Ajusta el tamaño de tu logo si es necesario */
+      height: auto;
+      /* Opcional: si tu logo tiene un borde, puedes añadir un ligero margen o sombra si no se ve bien en el fondo blanco */
+      /* border: 1px solid #eee; */
+      /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    }
+    
+    /* Spinner que combine con el rojo de tu logo */
+    .spinner {
+      border: 4px solid #f3f3f3; /* Gris muy claro para el fondo del spinner */
+      border-top: 4px solid #ff0000; /* Rojo vibrante, como el punto de tu logo */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Puedes añadir aquí tus estilos de "esqueleto" si aún quieres usarlos */
+    /* #header-mount, #carrusel-principal, #footer-mount { min-height: ... } */

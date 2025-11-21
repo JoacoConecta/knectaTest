@@ -1,0 +1,13 @@
+.sr-only {
+  position: absolute !important; width:1px; height:1px; padding:0;
+  margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+
+#whatsapp {
+  position: fixed; bottom: 2vh; right: 1vw; z-index: var(--z-overlay);
+  width: 55px; height: 55px; border-radius: 50%;
+  background: var(--brand-wa); box-shadow: 0 6px 16px rgba(0,0,0,.12); transform: scale(.85);
+}
+#whatsapp img { width: 82%; height: 82%; object-fit: cover; margin: 4.7px 0 0 5.3px; }
