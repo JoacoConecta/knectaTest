@@ -1,13 +1,14 @@
-// Bloque de configuración global (IIFE) para la inicialización del sitio.
-export const CLIENTE = "pruebamidway2"; // ID del cliente (tenant) actual
-export const API_BASE_URL = "https://k-nectafrstat.onrender.com"; // URL base del backend
+// Importas el objeto CONFIG desde el archivo generado
+import { CONFIG } from './config.js';
 
+// Bloque de configuración global (IIFE) para la inicialización del sitio.
+export const CLIENTE = CONFIG.cliente; // ID del cliente (tenant) actual 
+export const API_BASE_URL = CONFIG.apiBase;// URL base del backend
 (() => {
   // ----------------------------------------------------------
   // ⚙️ CONFIGURACIÓN INICIAL
   // ----------------------------------------------------------
-const CLIENTE = "pruebamidway2"; // ID del cliente (tenant) actual
-const API_BASE_URL = "https://k-nectafrstat.onrender.com"; // URL base del backend
+
   // 1. OBTENER TOKEN ANTI-BOT (TRUST TOKEN)
   // ----------------------------------------------------------
   // Llama al endpoint de inicialización del backend al cargar la página.
