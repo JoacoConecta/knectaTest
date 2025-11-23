@@ -79,6 +79,7 @@ export const API_BASE_URL = CONFIG.apiBase;// URL base del backend
 const htmlCache = new Map();
 const cssLoaded = new Set();
 
+
 // --------------------------------------------------------------
 // 🎨 FUNCIÓN: loadStyles()
 // --------------------------------------------------------------
@@ -102,6 +103,21 @@ function loadStyles(files = []) {
   });
 }
 
+// 🎨 MOTOR DE TEMAS: Sobrescribe las variables CSS
+(() => {
+  // Si no hay configuración de tema, no hacemos nada (se usa tokens.css)
+  if (!CONFIG.theme || Object.keys(CONFIG.theme).length === 0) return;
+
+  const root = document.documentElement; // Esto es el selector :root
+
+  // Recorremos cada clave del JSON y la aplicamos al navegador
+  Object.entries(CONFIG.theme).forEach(([variable, valor]) => {
+    // Ejemplo: variable = "--brand-primary", valor = "#ff0000"
+    root.style.setProperty(variable, valor);
+  });
+  
+  console.log("🎨 Tema personalizado aplicado:", CONFIG.cliente);
+})();
 // --------------------------------------------------------------
 // 🧩 FUNCIÓN PRINCIPAL: loadComponent()
 // --------------------------------------------------------------

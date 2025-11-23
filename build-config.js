@@ -1,25 +1,29 @@
-// build-config.js
 const fs = require('fs');
 
-// 1. Lees las variables de entorno (definidas en Netlify)
+// 1. Leemos la configuración del tema (JSON)
+let themeOverrides = {};
+if (process.env.THEME_CONFIG) {
+  try {
+    themeOverrides = JSON.parse(process.env.THEME_CONFIG);
+  } catch (e) {
+    console.error("⚠️ Error: El JSON de THEME_CONFIG no es válido. Se usarán estilos por defecto.");
+    // No detenemos el build, simplemente no aplicamos temas custom
+  }
+}
+
+// 2. Preparamos el objeto de configuración
 const configData = {
   cliente: process.env.STORE_NAME || "DEMO",
   apiBase: process.env.API_URL || "/server",
   imagenHero: process.env.HERO_IMAGE || "default.jpg",
-  // Para listas, asumimos que en Netlify la variable viene como string separado por comas
-  // Ejemplo en Netlify: "style1.css,style2.css"
-  estilosExtra: process.env.EXTRA_STYLES ? process.env.EXTRA_STYLES.split(',') : []
+  // Inyectamos solo los overrides
+  theme: themeOverrides
 };
 
-// 2. Creas el contenido del archivo JS
-// Usamos JSON.stringify para que formatee arrays y strings automáticamente sin errores de sintaxis
+// 3. Generamos el archivo
 const fileContent = `
-// ⚠️ ESTE ARCHIVO SE GENERA AUTOMÁTICAMENTE EN EL BUILD. NO EDITAR.
+// ⚠️ AUTO-GENERADO
 export const CONFIG = ${JSON.stringify(configData, null, 2)};
 `;
 
-// 3. Escribes el archivo en tu carpeta de JS
 fs.writeFileSync('./js/config.js', fileContent);
-
-console.log("✅ Configuración generada exitosamente en js/config.js");
-console.log(configData);
